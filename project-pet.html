@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pets Store and Consultancy</title>
+
+  <style>
+    body {
+      background: #000;
+      color: #e6e6e6;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header */
+    header {
+      padding: 22px 40px;
+      border-bottom: 1px solid #1a1a1a;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    header nav a {
+      text-decoration: none;
+      color: #bfbfbf;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    header nav a:hover {
+      color: #fff;
+    }
+
+    /* Main wrapper */
+    .container {
+      padding: 80px 50px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 38px;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .project-subtitle {
+      color: #b5b5b5;
+      font-size: 17px;
+      max-width: 700px;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    /* Buttons */
+    .btn-row {
+      margin: 25px 0 45px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .btn {
+      padding: 12px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      font-size: 15px;
+      display: inline-block;
+    }
+
+    .btn.solid {
+      background: #fff;
+      color: #000;
+    }
+    .btn.solid:hover {
+      background: #d9d9d9;
+    }
+
+    .btn.outline {
+      border: 2px solid #fff;
+      color: #fff;
+    }
+    .btn.outline:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* Screenshots Grid */
+    .img-grid {
+      margin-top: 35px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .img-grid img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+      height: 300px;
+      background: #0a0a0a;
+      border: 1px solid #1c1c1c;
+      transition: 0.3s;
+    }
+
+    .img-grid img:hover {
+      transform: scale(1.02);
+      filter: brightness(90%);
+    }
+
+    /* Section spacing */
+    .section-title {
+      font-size: 26px;
+      color: #fff;
+      margin-top: 60px;
+      margin-bottom: 16px;
+    }
+
+    .underline {
+      width: 60px;
+      height: 4px;
+      background: #fff;
+      border-radius: 20px;
+      margin-bottom: 25px;
+    }
+
+    @media (max-width: 850px) {
+      .img-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav><a href="index.html">← Back to Portfolio</a></nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+
+    <h1>Pet Store & Consultancy</h1>
+
+    <p class="project-subtitle">
+      A full-featured Pet Store & Consultancy Management System developed as a group project in 2023. The project provides an end-to-end platform for customers to explore pets, book consultancy sessions, and access pet-care services, while also offering an admin panel to manage pets, appointments, and customer details.
+    </p>
+
+    <!-- Buttons -->
+    <div class="btn-row">
+      <a href="https://github.com/rajeev27-sudo/Pet-Store-Consultancy" class="btn outline">📁 GitHub Repository</a>
+    </div>
+
+    <!-- Preview image -->
+    <h2 class="section-title">Preview</h2>
+    <div class="underline"></div>
+
+    <img src="assets/pets.webp" alt="Chatbot Main Preview" style="
+      width:100%;
+      max-height:420px;
+      border-radius:12px;
+      object-fit:cover;
+      margin-bottom:40px;
+      border:1px solid #1c1c1c;
+    ">
+
+    <!-- Screenshots -->
+    <h2 class="section-title">Screenshots</h2>
+    <div class="underline"></div>
+
+    <div class="img-grid">
+      <img src="assets/pet.png">
+    </div>
+
+  </main>
+
+</body>
+</html>

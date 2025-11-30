@@ -1,0 +1,651 @@
+/* -------------------- GLOBAL RESET -------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #000;
+    color: #e6e6e6;
+    overflow-x: hidden;
+}
+
+/* -------------------- NAVBAR -------------------- */
+header {
+    width: 100%;
+    padding: 22px 60px;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #bfbfbf;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+/* -------------------- HERO SECTION -------------------- */
+.hero-section {
+    display: flex;
+    height: 100vh;
+    padding-top: 120px;
+}
+
+/* LEFT SIDE */
+.hero-left {
+    width: 50%;
+    padding-left: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-small-img {
+    width: 110px;
+    border-radius: 50%;
+    border: 2px solid #444;
+    margin-bottom: 22px;
+    opacity: 0.9;
+}
+
+.hello {
+    color: #d0774a;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.hero-title {
+    font-size: 42px;
+    line-height: 1.3;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.hero-title span {
+    color: #fff;
+    font-weight: 700;
+}
+
+.hero-desc {
+    margin-bottom: 30px;
+    max-width: 450px;
+    color: #a8a8a8;
+    line-height: 1.7;
+}
+
+/* BUTTONS */
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn.solid {
+    background: #ffffff;
+    color: #000;
+    padding: 13px 28px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn.solid:hover {
+    background: #d9d9d9;
+}
+
+.btn.outline {
+    border: 2px solid #fff;
+    padding: 13px 28px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn.outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* RIGHT SIDE IMAGE */
+.hero-right {
+    width: 50%;
+}
+
+.hero-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+/* -------------------- ABOUT SECTION -------------------- */
+.about-section {
+    display: flex;
+    padding: 150px 80px;
+    align-items: center;
+    gap: 60px;
+    flex-direction: row-reverse; 
+}
+
+.about-left {
+    width: 50%;
+}
+
+.section-title {
+    font-size: 32px;
+    color: #fff;
+}
+
+.underline {
+    width: 80px;
+    height: 4px;
+    background: #fff;
+    margin: 15px 0 30px;
+    border-radius: 20px;
+}
+
+
+.section .underline {
+    margin: 15px auto 30px;
+}
+
+.about-text {
+    color: #b3b3b3;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+.about-right {
+    width: 50%;
+}
+
+.about-image {
+    width: 100%;
+    border-radius: 10px;
+    filter: grayscale(20%);
+    opacity: 0.9;
+}
+
+/* -------------------- SKILLS -------------------- */
+.section {
+    padding: 150px 50px 90px;
+    text-align: center;
+}
+
+.skills-grid {
+    display: grid;
+    /* Force exactly 4 columns on wider screens */
+    grid-template-columns: repeat(4, minmax(140px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+/* Responsive adjustments: 3 cols, 2 cols, 1 col */
+@media (max-width: 1100px) {
+    .skills-grid {
+        grid-template-columns: repeat(3, minmax(140px, 1fr));
+    }
+}
+
+@media (max-width: 800px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(140px, 1fr));
+    }
+    .about-section {
+        flex-direction: column; /* also ensure about stacks on small screens */
+        padding: 80px 30px;
+    }
+}
+
+@media (max-width: 420px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    .skill-card {
+        padding: 22px 14px;
+    }
+}
+
+.skill-card {
+    background: linear-gradient(180deg, #0f0f0f 0%, #0b0b0b 100%);
+    border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 12px;
+    padding: 36px 18px;
+    text-align: center;
+    transition: transform 280ms cubic-bezier(.2,.9,.2,1), box-shadow 280ms, background 280ms, border-color 280ms;
+    transform-origin: center;
+    cursor: pointer;
+    will-change: transform, box-shadow;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card:hover {
+    transform: translateY(-14px) scale(1.03);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.6), 0 6px 24px rgba(208,119,74,0.06);
+    border-color: rgba(208,119,74,0.18);
+    background: linear-gradient(180deg, #121212 0%, #0d0d0d 100%);
+}
+
+/* subtle glow / base accent under the card */
+.skill-card::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%) scaleX(0.6);
+    width: 70%;
+    height: 6px;
+    background: linear-gradient(90deg, rgba(208,119,74,0.14), rgba(208,119,74,0));
+    filter: blur(8px);
+    opacity: 0;
+    transition: opacity 300ms ease, transform 300ms ease, bottom 300ms ease;
+    border-radius: 6px;
+    pointer-events: none;
+}
+
+.skill-card:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) scaleX(1);
+    bottom: -6px;
+}
+
+.skill-card img {
+    width: 56px;
+    margin-bottom: 16px;
+    opacity: 0.95;
+    transition: transform 280ms cubic-bezier(.2,.9,.2,1), filter 280ms;
+    display: inline-block;
+}
+
+.skill-card:hover img {
+    transform: translateY(-6px) scale(1.08);
+    filter: drop-shadow(0 8px 18px rgba(208,119,74,0.08));
+}
+
+.skill-card p {
+    color: #d1d1d1;
+    font-size: 15px;
+    transition: color 220ms ease, transform 220ms ease;
+    font-weight: 600;
+}
+
+.skill-card:hover p {
+    color: #ffdcc8;
+}
+
+/* Accessibility: allow keyboard focus to trigger pop-up styles */
+.skill-card:focus-within, .skill-card:focus {
+    outline: none;
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 14px 36px rgba(0,0,0,0.55), 0 6px 20px rgba(208,119,74,0.05);
+}
+
+/* Disable hover-specific visuals on touch devices to avoid accidental pop-ups */
+@media (hover: none) {
+    .skill-card {
+        transform: none !important;
+    }
+    .skill-card::after {
+        display: none;
+    }
+    .skill-card img {
+        transform: none !important;
+    }
+}
+
+/* Reveal (swipe-down fade) base styles */
+.reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    will-change: opacity, transform;
+    transition: opacity 480ms cubic-bezier(.2,.9,.2,1), transform 480ms cubic-bezier(.2,.9,.2,1);
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* -------------------- PROJECTS -------------------- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* two projects per row on desktop */
+    gap: 28px;
+    margin-top: 40px;
+}
+
+.project-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #0b0b0b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    filter: grayscale(30%) brightness(60%);
+    transition: transform 300ms ease, filter 300ms ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.04);
+    filter: grayscale(0%) brightness(85%);
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.55);
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.project-card:hover .overlay {
+    opacity: 1;
+}
+
+/* Make the whole project card link clickable and style it */
+.project-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+}
+
+.overlay-content h3 {
+    margin-bottom: 6px;
+}
+.overlay-content p {
+    margin-bottom: 12px;
+    color: #ddd;
+}
+.overlay-content .cta {
+    display: inline-block;
+    background: #d0774a;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.overlay-content {
+    text-align: center;
+}
+
+.overlay-content h3 {
+    color: #fff;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+/* -------------------- CONTACT SECTION - GLASS EFFECT -------------------- */
+
+.contact-section {
+    padding: 140px 60px 140px;
+    text-align: center;
+}
+
+.contact-section .section-title {
+    font-size: 34px;
+    letter-spacing: 1px;
+}
+
+.contact-section .underline {
+    margin: 14px auto 40px;
+}
+
+.contact-subtitle {
+    max-width: 650px;
+    margin: 0 auto 55px;
+    color: #bcbcbc;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* GRID */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+/* ensure vertical centering of the two panels */
+.contact-grid {
+    align-items: center;
+}
+
+
+/* -------------------- GLASS BOX BASE -------------------- */
+.contact-info,
+.contact-form-wrap {
+    padding: 35px 28px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 26px rgba(0,0,0,0.35);
+}
+
+
+/* -------------------- LEFT SIDE -------------------- */
+.contact-info {
+    text-align: left;
+}
+
+.contact-info h4 {
+    font-size: 17px;
+    color: #fff;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.contact-info a,
+.contact-info p {
+    color: #d6d6d6;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.contact-info a:hover {
+    color: #ffffff;
+}
+
+/* Social Buttons */
+.contact-socials {
+    margin-top: 25px;
+    display: flex;
+    gap: 10px;
+}
+
+.contact-socials a {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #dedede;
+    font-size: 13px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: 0.25s ease;
+}
+
+.contact-socials a:hover {
+    border-color: #d0774a;
+    color: #fff;
+    background: rgba(208, 119, 74, 0.15);
+}
+
+/* Contact item spacing & icon alignment */
+.contact-item {
+    margin-bottom: 18px;
+}
+
+.contact-item h4 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.contact-item a {
+    color: #d0774a;
+    text-decoration: none;
+    transition: color 180ms ease;
+}
+
+.contact-item a:hover {
+    color: #ffdcca;
+    text-decoration: underline;
+}
+
+/* subtle hover lift for the glass panels */
+.contact-info,
+.contact-form-wrap {
+    transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.contact-info:hover,
+.contact-form-wrap:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 28px 60px rgba(0,0,0,0.55);
+    border-color: rgba(255,255,255,0.11);
+}
+
+
+/* -------------------- RIGHT SIDE FORM -------------------- */
+.contact-form-wrap {
+    text-align: left;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact-form label {
+    color: #eeeeee;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #fff;
+    padding: 14px 14px;
+    border-radius: 8px;
+    transition: 0.25s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #d0774a80;
+    background: rgba(255, 255, 255, 0.09);
+    outline: none;
+    box-shadow: 0 10px 30px rgba(208,119,74,0.09);
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+/* Submit Button */
+.contact-form button.btn.solid {
+    background: #d0774a;
+    color: #fff;
+    padding: 13px 28px;
+    border-radius: 6px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.contact-form button.btn.solid:hover {
+    background: #b8653c;
+}
+
+/* make primary button slightly larger and aligned cleanly */
+.contact-form button.btn.solid {
+    padding: 12px 24px;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    align-self: flex-start;
+}
+
+/* social icons subtle scale on hover */
+.contact-socials a:hover {
+    transform: translateY(-3px) scale(1.02);
+}
+
+
+/* -------------------- RESPONSIVE -------------------- */
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info,
+    .contact-form-wrap {
+        text-align: center;
+    }
+
+    .contact-socials {
+        justify-content: center;
+    }
+
+    .contact-form button.btn.solid {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #0a0a0a;
+    border-top: 1px solid #1c1c1c;
+    margin-top: 40px;
+}
